@@ -1,3 +1,13 @@
+round = function (A) {
+    if (!A) { return A; }
+    A.forEach(function (row) {
+        row.forEach(function (col, i) {
+            row[i] = Math.round(col);
+        });
+    });
+    return A;
+};
+
 module.exports = function (A) {
     var rows = A.length;
     var columns = A[0].length;
@@ -12,7 +22,7 @@ module.exports = function (A) {
             if (rows === i) {
                 i = k;
                 lead++;
-                if (columns === lead) return A;
+                if (columns === lead) return round(A);
             }
         }
         var irow = A[i], krow = A[k];
@@ -32,5 +42,5 @@ module.exports = function (A) {
         }
         lead++;
     }
-    return A;
+    return round(A);
 };
