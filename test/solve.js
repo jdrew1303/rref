@@ -2,7 +2,7 @@ var rref = require('../');
 var test = require('tape');
 
 test(function (t) {
-    t.plan(3);
+    t.plan(4);
     
     t.deepEqual(
         rref([
@@ -26,6 +26,20 @@ test(function (t) {
             [ 1, 0, 0, 2 ],
             [ 0, 1, 0, 3 ],
             [ 0, 0, 1, -1 ]
+        ]
+    );
+    t.deepEqual(
+        rref([
+            [ 4, 3, -2, 1 , 22 ],
+            [ 2, 1, -2, 2, 9 ],
+            [ 1,-1, 1, 5 , 8 ],
+            [ 3, 1, 3, 1 , 22 ]
+        ]),
+        [
+            [ 1, 0, 0, 0, 4 ],
+            [ 0, 1, 0, 0, 3 ],
+            [ 0, 0, 1, 0, 2 ],
+            [ 0, 0, 0, 1, 1 ]
         ]
     );
     t.deepEqual(
