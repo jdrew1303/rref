@@ -12,7 +12,7 @@ module.exports = function (A) {
             if (rows === i) {
                 i = k;
                 lead++;
-                if (columns === lead) return;
+                if (columns === lead) return A;
             }
         }
         var irow = A[i], krow = A[k];
